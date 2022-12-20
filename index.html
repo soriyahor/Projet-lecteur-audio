@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player audio</title>
+</head>
+
+<body>
+    <main class="containerLecteur">
+
+        <div class="album">
+            <img src="image/albumsheeran.jpg" alt="photo album x" class="albumX">
+            <div class="infoMusic">
+                <h1 class="titre">Titre</h1>
+                <p class="nomArtiste">Nom artiste</p>
+
+            </div>
+
+
+
+            <audio src="musique/ShapeofYou.mp3"></audio>
+
+            <div class="containBarre">
+                <div class="barreAudio">
+                    <div class="progresseBarre"></div>
+                </div>
+                <div class="tempsCouru">0:00</div>
+                <div class="tempsTotal">0:00</div>
+            </div>
+
+
+
+            <nav class="navBarre">
+
+                <button class="btnPrec">
+                    <img src="icon/precedent.svg" alt="icone precedent">
+                </button>
+
+                <button class="btnPlay" value="paused">
+                    <img src="icon/play.svg" alt="icone play" class="iconPlay">
+                </button>
+
+                <button class="btnSuite">
+                    <img src="icon/suivant.svg" alt="icone suivant">
+                </button>
+
+            </nav>
+
+            <div class="autreChoix">
+                <div class="containVolume">
+                    <img src="icon/volume.svg" alt="icone volume" class="iconeVolume">
+                    <input type="range" class="volume">
+                </div>
+
+                <button class="btnStop">stop</button>
+
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bgcBody: #fce9fd;
+  --majeurCouleur: #e091f4; /**+gradient 2**/
+  --gradientOne: #e18b8b;
+  --ecritureCouleur: #453636;
+  --bouton: #5bfdf3;
+}
+
+body {
+  background-color: var(--bgcBody);
+  display: flex;
+  background-image: url("image/body/bgcBody1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.containerLecteur {
+  max-width: 370px;
+  border-radius: 30px;
+  background-color: var(--majeurCouleur);
+  background: linear-gradient(
+    to bottom,
+    var(--gradientOne),
+    var(--majeurCouleur)
+  );
+  margin: 62px auto;
+  border: 2px solid black;
+}
+
+.album {
+  border-radius: 15px;
+  padding: 20px 20px;
+}
+.albumX {
+  border-radius: 15px;
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 15px 35px black;
+  object-fit: cover;
+  object-position: center;
+}
+.infoMusic {
+  padding: 20px 10px;
+}
+.titre {
+  color: white;
+  font-size: 25px;
+}
+.nomArtiste {
+  color: var(--ecritureCouleur);
+}
+.containBarre {
+  position: relative;
+  margin: 35px 0 60px;
+  width: 100%;
+  border-radius: 5px;
+}
+.barreAudio {
+  position: relative;
+  height: 7px;
+  border-radius: 5px;
+  background-color: #c8c9cc;
+  margin: -40px 0;
+}
+.progresseBarre {
+  height: 100%;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: #426bff;
+}
+.tempsCouru {
+  position: absolute;
+  top: 10px;
+  font-size: 16px;
+  color: var(--ecritureCouleur);
+}
+.tempsTotal {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 16px;
+  color: var(--ecritureCouleur);
+}
+.navBarre {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  background: transparent;
+}
+button img {
+  width: 45px;
+}
+
+.iconPlay {
+  width: 25px;
+}
+.btnPlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: var(--bouton);
+  border: none;
+}
+.btnPrec,
+.btnSuite {
+  border: none;
+}
+.autreChoix {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.volume {
+  width: 75px;
+}
+.iconeVolume {
+  width: 20px;
+}
+.btnStop {
+  border: none;
+  font-size: 18px;
+}
