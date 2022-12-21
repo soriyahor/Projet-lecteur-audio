@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Cambo");
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +12,8 @@
   --gradientOne: #e18b8b;
   --ecritureCouleur: #453636;
   --bouton: #5bfdf3;
+  --ecitureTitre: Cambo;
+  --ecritureArtiste: Cambo;
 }
 
 body {
@@ -51,9 +55,11 @@ body {
 .titre {
   color: white;
   font-size: 25px;
+  font-family: var(--ecitureTitre), Arial, Helvetica, sans-serif;
 }
 .nomArtiste {
   color: var(--ecritureCouleur);
+  font-family: var(--ecritureArtiste), Arial, Helvetica, sans-serif;
 }
 .containBarre {
   position: relative;
@@ -132,4 +138,10 @@ button img {
 .btnStop {
   border: none;
   font-size: 18px;
+}
+
+@media(max-width:1500px){
+    body{
+        background-image: none;
+    }
 }

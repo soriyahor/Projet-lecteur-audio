@@ -75,14 +75,14 @@ function togglePlayPause() {
 
 //Affichage titre artiste
 
-function lire(musique) {
+function affichage(musique) {
   titre.textContent = musique.title;
   audio.src = musique.src;
   artiste.textContent = musique.artist;
   album.src = musique.album;
 }
 
-lire(musique[i]); //appel de la fonction pour l'affichage
+affichage(musique[i]); //appel de la fonction pour l'affichage
 
 // precedent
 
@@ -93,7 +93,7 @@ btnPrec.addEventListener("click", (retour) => {
     i = musique.length - 1;
   }
 
-  lire(musique[i]);
+  affichage(musique[i]);
 
   if (btnPlay.value == "played") {
     togglePlayPause();
@@ -109,10 +109,8 @@ btnSuite.addEventListener("click", (suite) => {
     //i=20 lenth=20
     i = 0;
   }
-  lire(musique[i]);
-  //TODO condition
-  console.log("audio", audio);
-
+  affichage(musique[i]);
+  
   if (btnPlay.value == "played") {
     togglePlayPause();
   }
@@ -133,7 +131,7 @@ mute.addEventListener("click", (toggleMute) => {
 // volume
 
 son.addEventListener("click", (modifVolume) => {
-  audio.volume = son.value / 100;
+  audio.volume = son.value / 100; //valeurmax son=100
   console.log(audio.volume);
   if (audio.volume == 0) {
     mute.src = "./icon/mute.svg";
@@ -160,14 +158,14 @@ function ecouleTemps() {
   totalTemp = audio.duration;
   // console.log(totalTemp);
 
-  formatTemps(temp, tempsCouru);
-  formatTemps(totalTemp, tempsTotal);
+  formatTemps(temp, tempsCouru); //Appel de la fonction formatTemps pour conversion : temps ecoule
+  formatTemps(totalTemp, tempsTotal); //Appel de la fonction formatTemps pour conversion : temps total
 }
 
 //converti le temps
 function formatTemps(valeur, element) {
-  const minute = Math.trunc(valeur / 60);
-  let seconde = Math.trunc(valeur % 60);
+  const minute = Math.trunc(valeur / 60); //trunc enleve la décimale et garde l'entier. 263/60=4.38 donc 4
+  let seconde = Math.trunc(valeur % 60); //263%60 reste 23
   if (seconde < 10) {
     seconde = "0" + seconde;
   }
@@ -176,20 +174,20 @@ function formatTemps(valeur, element) {
 
 // barre de progression
 
-audio.addEventListener("timeupdate", (progression) => {
+audio.addEventListener("timeupdate", (progression) => { //l'event timeupdate : se declenche lorsque currentTime se lance
   let avance = audio.currentTime;
-  formatTemps(avance, tempsCouru); //appel de la fonction formatTemps
   // console.log(avance);//temps en secondes (4:23=263sec)
+  formatTemps(avance, tempsCouru); //appel de la fonction formatTemps : temps ecoulé; fonctionne plus avec fonction ecouletemps
   let position = avance / totalTemp;
   // console.log(position);
   // console.log(totalTemp);
-  progress.style.transform = `scaleX(${position})`;
+  progress.style.transform = `scaleX(${position})`; //changement de style scaleX modif de l'echelle X
 
   //Passe à la chanson suivante lorsque la chanson ecouté est finie
 
   if (audio.ended) {
     i++;
-    lire(musique[i]);
+    affichage(musique[i]);
     togglePlayPause();
   }
 });
