@@ -130,7 +130,7 @@ mute.addEventListener("click", (toggleMute) => {
 
 // volume
 
-son.addEventListener("click", (modifVolume) => {
+son.addEventListener("change", (modifVolume) => {
   audio.volume = son.value / 100; //valeurmax son=100
   console.log(audio.volume);
   if (audio.volume == 0) {
