@@ -183,7 +183,7 @@ audio.addEventListener("timeupdate", (progression) => { //l'event timeupdate : s
   // console.log(totalTemp);
   progress.style.transform = `scaleX(${position})`; //changement de style scaleX modif de l'echelle X
 
-  //Passe à la chanson suivante lorsque la chanson ecouté est finie
+  //Passe à la chanson suivante lorsque la chanson ecoutée est finie
 
   if (audio.ended) {
     i++;
@@ -195,14 +195,17 @@ audio.addEventListener("timeupdate", (progression) => { //l'event timeupdate : s
 // position sur la barre
 
 let rect = barreAudio.getBoundingClientRect();
+// console.log(rect);
 let largeur = rect.width;
+// console.log(largeur);
+
 barreAudio.addEventListener("click", positionMusic);
 
 function positionMusic(e) {
-  let x = e.clientX - rect.left;
+  let x = e.clientX - rect.left; //permet de recuperer la position X du clic
   // console.log(e.clientX, rect.left,x);
 
-  let widthPercent = x / largeur;
+  let widthPercent = x / largeur; 
   // console.log(widthPercent);
   audio.currentTime = audio.duration * widthPercent;
 }
