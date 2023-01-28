@@ -9,7 +9,7 @@
     <title>Player audio</title>
 </head>
 
-<body>
+<body id="test">
     <main class="containerLecteur">
 
         <div class="album">
@@ -65,7 +65,24 @@
     </main>
 
 
-    <script src="main.js"></script>
+    <script src="main.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+<script src="vanta.js"></script>
+<script>
+VANTA.TRUNK({
+  el: "#test",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 0.00,
+  color: 0xd220b1,
+  spacing:0.5,
+  chaos: 4.50
+})
+</script>
 </body>
 
 </html>

@@ -33,6 +33,7 @@ const musique = [
   },
 ];
 
+
 // Declaration des variables
 
 let audio = document.querySelector("audio");
@@ -57,6 +58,7 @@ function play() {
   btnPlay.querySelector("img").src = "./icon/pause.svg";
   audio.play();
   btnPlay.value = "played";
+  
 }
 
 function pause() {

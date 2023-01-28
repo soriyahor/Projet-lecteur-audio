@@ -17,11 +17,11 @@
 }
 
 body {
-  background-color: var(--bgcBody);
+  background-color: rgb(34, 36, 38);
   display: flex;
-  background-image: url("image/body/bgcBody1.jpg");
+  /* background-image: url("image/body/bgcBody1.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .containerLecteur {
@@ -120,6 +120,11 @@ button img {
   background: var(--bouton);
   border: none;
 }
+
+/* .btnPlay:hover{
+border:1px solid blue;
+} */
+
 .btnPrec,
 .btnSuite {
   border: none;
@@ -140,8 +145,12 @@ button img {
   font-size: 18px;
 }
 
-@media(max-width:1500px){
-    body{
-        background-image: none;
-    }
+.btnStop:hover{
+  color:red
+}
+
+
+
+#defaultCanvas0{
+  height: 100%;
 }
